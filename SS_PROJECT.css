@@ -22,6 +22,11 @@ body {background-color: aliceblue;}
     
 }
 
+#SScalendar .button {
+	text-decoration: none;
+	color: black;
+}
+
 #SScalendar .calendar_table {
     
     width: 500px;
@@ -31,14 +36,6 @@ body {background-color: aliceblue;}
     background-color: antiquewhite;
     color: black;
     margin: auto;
-    
-}
-
-#SScalendar .calendar_table tr,
-#SScalendar .calendar_table th,
-#SScalendar .calendar_table td {
-    
-    
     
 }
 
