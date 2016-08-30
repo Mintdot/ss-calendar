@@ -3,7 +3,7 @@
 
 body {background-color: aliceblue;}
 
-.calendar_div {
+#SScalendar .calendar_div {
     
     width: 600px;
     height: 450px;
@@ -25,6 +25,7 @@ body {background-color: aliceblue;}
 #SScalendar .button {
 	text-decoration: none;
 	color: black;
+	margin: 10px;
 }
 
 #SScalendar .calendar_table {
@@ -39,7 +40,6 @@ body {background-color: aliceblue;}
     
 }
 
-#SScalendar  .today {color:antiquewhite; background-color: salmon}
 #SScalendar .sun {color: red}
 #SScalendar .sat {color: blue}
 #SScalendar .prev, .next {color: dimgray}

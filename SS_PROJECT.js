@@ -93,7 +93,7 @@ if( typeof(today) != 'undefined' ) {
       today[1] = today[1] - 1;
       today = new Date(today[0], today[1], today[2]);
    } else {
-        var today = new Date();
+	   var today = new Date();
    }
 var year = today.getFullYear();
 var month = today.getMonth() + 1;
@@ -106,11 +106,7 @@ var lastDate = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 if(year % 4 == 0 && year % 100 != 0 || year % 400 == 0)
     lastDate[1] = 29;
 	
-if(month == 12) {
-  var nowLastDate = lastDate[month - 1];  
-} else {
-var nowLastDate = lastDate[month];
-}
+var nowLastDate = lastDate[month - 1];
 
 var week = Math.ceil((day+nowLastDate)/7);
 
@@ -119,12 +115,16 @@ var week = Math.ceil((day+nowLastDate)/7);
 	
 var prevMonthToday = year + '-' + (month - 1) + '-' + date;
 var nextMonthToday = year + '-' + (month + 1) + '-' + date;
+var prevYearToday = (year - 1) + '-' + month + '-' + date;
+var nextYearToday = (year + 1) + '-' + month + '-' + date;
 
 var calendar = "<div class='calendar_div'>";
 calendar += "<p>";
-calendar += "<a href='#' class='button' onclick= 'SScalendar(\""+id+"\", \""+prevMonthToday+"\")'>◀</a>";
+calendar += "<a href='#' class='button' onclick= 'SScalendar(\""+id+"\", \""+prevYearToday+"\")'><img src='btn_year_prev.gif'/></a>";
+calendar += "<a href='#' class='button' onclick= 'SScalendar(\""+id+"\", \""+prevMonthToday+"\")'><img src='btn_month_prev.gif'/></a>";
 calendar += year + '년' + month + '월';
-calendar += "<a href=#' class='button' onclick= 'SScalendar(\""+id+"\", \""+nextMonthToday+"\")'>▶</a>";
+calendar += "<a href=#' class='button' onclick= 'SScalendar(\""+id+"\", \""+nextMonthToday+"\")'><img src='btn_month_next.gif'/></a>";
+calendar += "<a href='#' class='button' onclick= 'SScalendar(\""+id+"\", \""+nextYearToday+"\")'><img src='btn_year_next.gif'/></a>";
 calendar += "</p>";
 calendar += "<table class='calendar_table'>"
 calendar += "<tr>";
@@ -154,9 +154,6 @@ for(var i = 1; i <= week; i++) {
         } else if(countDate > nowLastDate) {
             calendar += "<td class='next'>" + nextCountDate + "</td>";
             nextCountDate++;
-        } else if(countDate == date) {
-            calendar += "<td class='today'>" + countDate + "</td>";
-            countDate++;
         } else if(count == 0) {
             calendar += "<td class='sun'>" + countDate + "</td>";
             countDate++;
