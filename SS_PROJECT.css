@@ -1,7 +1,7 @@
 *{margin : 0; padding : 0;}
 
 
-body {background-color: aliceblue;}
+body {background-color: #f0f8ff;}
 
 #SScalendar .calendar_div {
     
@@ -32,14 +32,14 @@ body {background-color: aliceblue;}
     
     width: 500px;
     height: 350px;
-    border: 2px solid black;
+    border: 2px solid #000000;
     text-align: center;
-    background-color: antiquewhite;
+    background-color: #faebd7;
     color: black;
     margin: auto;
     
 }
 
-#SScalendar .sun {color: red}
-#SScalendar .sat {color: blue}
-#SScalendar .prev, .next {color: dimgray}
+#SScalendar .sun {color: #ff0000}
+#SScalendar .sat {color: #0000ff}
+#SScalendar .prev, .next {color: #696969}

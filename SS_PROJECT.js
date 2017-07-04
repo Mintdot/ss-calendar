@@ -100,6 +100,7 @@ var month = today.getMonth() + 1;
 var date = today.getDate();
 today.setDate(1);
 var day = today.getDay();
+var d = new Date();
 
 var lastDate = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
@@ -159,6 +160,9 @@ for(var i = 1; i <= week; i++) {
             countDate++;
         } else if(count == 6) {
             calendar += "<td class='sat'>" + countDate + "</td>";
+            countDate++;
+        } else if(year == d.getFullYear() && month == d.getMonth() + 1 && countDate == d.getDate()) {
+            calendar += "<td style='background-color: #cccccc'>" + countDate + "</td>";
             countDate++;
         } else {
             calendar += "<td>" + countDate + "</td>";
